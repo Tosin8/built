@@ -36,6 +36,7 @@ class Splash_Screen extends StatelessWidget {
                     color: Colors.white),
               ),
             ),
-            
           ]),
-  
+    );
+  }
+}
