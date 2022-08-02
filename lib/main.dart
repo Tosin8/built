@@ -1,3 +1,4 @@
+import 'package:built/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,21 +23,59 @@ class Splash_Screen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Column(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            // Spacer(height: 50),
-            Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 120.0),
-              child: Text(
-                'Get Started with your fitness program today!',
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+          children: [
+            //padding: EdgeInsets.sy(left: 20.0, right: 120.0),
+            const Text(
+              'Get Started with /n your fitness /n program today!',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+            const Spacer(),
+            Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.black87,
+                ),
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  child: const Text(
+                    'Start Workout',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
-          ]),
+            const Center(
+              child: Text(
+                'Builtup.com',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
