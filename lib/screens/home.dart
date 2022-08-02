@@ -5,27 +5,31 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Column(
-      children: [
-        Row(
-          children: [
-            Image.asset('assets/images/logo.png'),
-            const Spacer(),
-            const Icon(Icons.notifications),
-            const Icon(Icons.switch_account),
-          ],
-        ),
-        const Text('Good Morning',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              color: Colors.black12,
-            )),
-        const Text('Choose your /n workout today',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25))
-      ],
-    ));
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
+        children: [
+          Row(
+            children: [
+              Image.asset('assets/images/logo.png'),
+              const Spacer(),
+              const Icon(Icons.notifications),
+              const Icon(Icons.switch_account),
+            ],
+          ),
+          const Text('Good Morning',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.black12,
+              )),
+          const Text('Choose your \n workout today',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25))
+        ],
+      )),
+    );
   }
 }

@@ -16,64 +16,71 @@ class Splash_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/splash_screen.png'),
-          fit: BoxFit.cover,
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/splash_screen.png'),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            //padding: EdgeInsets.sy(left: 20.0, right: 120.0),
-            const Text(
-              'Get Started with /n your fitness /n program today!',
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-            const Spacer(),
-            Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.black87,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 80),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Spacer(flex: 1),
+              //padding: EdgeInsets.sy(left: 20.0, right: 120.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 100.0),
+                child: Text(
+                  'Get Started with \n your fitness \n program today!',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
-                width: 200,
-                height: 50,
-                child: ElevatedButton(
-                  child: const Text(
-                    'Start Workout',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+              ),
+              const Spacer(),
+              Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.black87,
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    );
-                  },
+                  width: 200,
+                  height: 50,
+                  child: ElevatedButton(
+                    child: const Text(
+                      'Start Workout',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
-            const Center(
-              child: Text(
-                'Builtup.com',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
+              const SizedBox(height: 10),
+              const Center(
+                child: Text(
+                  'Builtup.com',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
