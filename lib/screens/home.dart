@@ -27,7 +27,22 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 25))
+                  fontSize: 25)),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            width: 120,
+            height: 50,
+            child: const TextField(
+                decoration: InputDecoration(
+                    hintText: 'Search',
+                    icon: Icon(
+                      Icons.search,
+                    ))),
+          ),
+          const Text('Recently Workouts', style: TextStyle(color: Colors.black))
         ],
       )),
     );
