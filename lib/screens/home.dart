@@ -41,22 +41,38 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 25,
                       letterSpacing: 1.5)),
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                width: 100,
+                height: 50,
+                child: const TextField(
+                    decoration: InputDecoration(
+                        hintText: 'Principles of effective body building',
+                        icon: Padding(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Icon(
+                            Icons.search,
+                          ),
+                        ))),
               ),
-              width: 120,
-              height: 50,
-              child: const TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Search',
-                      icon: Icon(
-                        Icons.search,
-                      ))),
             ),
-            const Text('Recently Workouts',
-                style: TextStyle(color: Colors.black)),
+            const SizedBox(height: 10),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                'Recently Workouts',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ],
         ),
       ),
