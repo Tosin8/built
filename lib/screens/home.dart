@@ -6,6 +6,28 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fitness_center),
+            label: Text('Workout'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: Text('Settings'),
+          ),
+        ],
+        currentIndex: 0,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
+        onTap: (int index) {
+          print(index);
+        },
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListView(
