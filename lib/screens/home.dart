@@ -10,25 +10,37 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListView(
           children: [
-            Row(
-              children: [
-                Image.asset('assets/images/logo.png'),
-                const Spacer(),
-                const Icon(Icons.notifications),
-                const Icon(Icons.power_off),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Row(
+                children: [
+                  Image.asset('assets/images/logo.png'),
+                  const Spacer(),
+                  const Icon(Icons.notifications),
+                  const Icon(Icons.power_off),
+                ],
+              ),
             ),
-            const Text('Good Morning',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black12,
-                )),
-            const Text('Choose your \n workout today',
-                style: TextStyle(
-                    color: Colors.black,
+            const SizedBox(height: 5),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text('Good Morning',
+                  style: TextStyle(
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25)),
+                    color: Colors.black12,
+                  )),
+            ),
+            const SizedBox(height: 10),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text('Choose your \nworkout today',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      letterSpacing: 1.5)),
+            ),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -45,20 +57,6 @@ class HomeScreen extends StatelessWidget {
             ),
             const Text('Recently Workouts',
                 style: TextStyle(color: Colors.black)),
-            ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Container(
-                  width: 40,
-                  height: 50,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/6.jpg'),
-                        fit: BoxFit.fill),
-                  ),
-                )
-              ],
-            )
           ],
         ),
       ),
