@@ -25,7 +25,7 @@ class Splash_Screen extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
