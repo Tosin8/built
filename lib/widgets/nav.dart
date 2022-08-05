@@ -1,53 +1,69 @@
-import 'package:built/screens/home.dart';
 import 'package:flutter/material.dart';
 
-class NavBar extends StatefulWidget {
-  const NavBar({Key? key}) : super(key: key);
-
-  @override
-  State<NavBar> createState() => _NavBarState();
-}
-
-class _NavBarState extends State<NavBar> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _widgetOptions = <Widget>[
-    const HomeScreen(),
-  ];
-
-  void _onItemTap(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: _widgetOptions.elementAt(_selectedIndex),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: Text('Home'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.fitness_center),
-              label: Text('Workout'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.collections),
-              label: Text('Collections'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: Text('Settings'),
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTap,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.grey,
-        ));
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      height: 50,
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          BottomNavItem(
+            title: 'Home',
+            image: 'assets/icons/nav_icon/home.png',
+            isActive: true,
+          ),
+          BottomNavItem(
+            title: 'Analytics',
+            image: 'assets/icons/nav_icon/analytics.png',
+          ),
+          BottomNavItem(
+            title: 'Collection',
+            image: 'assets/icons/nav_icon/collection.png',
+          ),
+          BottomNavItem(
+            title: 'Home',
+            image: 'assets/icons/nav_icon/settings.png',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BottomNavItem extends StatelessWidget {
+  final String title;
+  final String image;
+  final Function press;
+  final bool isActive;
+  const BottomNavItem({
+    Key? key,
+    required this.title,
+    required this.image,
+    required this.press,
+    this.isActive = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset(image, color: isActive ? Colors.white : Colors.grey),
+          Text(
+            title,
+            style: TextStyle(color: isActive ? Colors.white : Colors.grey),
+          ),
+        ],
+      ),
+    );
   }
 }
