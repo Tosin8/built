@@ -1,4 +1,9 @@
+import 'package:built/screens/settings.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/analytics.dart';
+import '../screens/collections.dart';
+import '../screens/home.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -13,23 +18,53 @@ class BottomNavBar extends StatelessWidget {
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           BottomNavItem(
             title: 'Home',
             image: 'assets/icons/nav_icon/home.png',
             isActive: true,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+              );
+            },
           ),
           BottomNavItem(
             title: 'Analytics',
             image: 'assets/icons/nav_icon/analytics.png',
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Analytics(),
+                  ));
+            },
           ),
           BottomNavItem(
             title: 'Collection',
             image: 'assets/icons/nav_icon/collection.png',
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Collection(),
+                  ));
+            },
           ),
           BottomNavItem(
             title: 'Home',
             image: 'assets/icons/nav_icon/settings.png',
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Settings(),
+                ),
+              );
+            },
           ),
         ],
       ),
