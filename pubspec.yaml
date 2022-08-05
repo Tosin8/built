@@ -39,6 +39,10 @@ flutter:
    - assets/images/7.jpg
    - assets/images/8.jpg
    - assets/images/logo.png
+   - assets/icons/nav_icon/collection.png
+   - assets/icons/nav_icon/home.png
+   - assets/icons/nav_icon/analytics.png
+   - assets/icons/nav_icon/settings.png
 
   #   - images/a_dot_ham.jpeg
 

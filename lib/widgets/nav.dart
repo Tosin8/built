@@ -9,7 +9,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  final int _selectedIndex = 0;
+  int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
@@ -36,18 +36,18 @@ class _NavBarState extends State<NavBar> {
               label: Text('Workout'),
             ),
             BottomNavigationBarItem(
+              icon: Icon(Icons.collections),
+              label: Text('Collections'),
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: Text('Settings'),
             ),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTap,
-
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey,
-          // onTap: (int index) {
-          //   print(index);
-          // },
         ));
   }
 }

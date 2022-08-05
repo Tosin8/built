@@ -11,6 +11,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Container(
+        height: 50,
+        color: Colors.white,
+        child: Row(
+          children: [
+            Column(
+              children: const [
+                Image.asset('assets/images/home_icon.png'),
+              ],
+            )
+          ],
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListView(
