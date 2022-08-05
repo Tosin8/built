@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
-int _selectedIndex = 0;
-List<Widget> _widgetOptions = <Widget>[
-  Text('Home'), 
-]; 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: 
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListView(
           children: [
@@ -82,28 +83,7 @@ List<Widget> _widgetOptions = <Widget>[
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem> [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
-            label: Text('Workout'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: Text('Settings'),
-          ),
-        ],
-        currentIndex: 0,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        onTap: (int index) {
-          print(index);
-        },
-      ),
+      
     );
   }
 }
